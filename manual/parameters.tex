@@ -1,5 +1,457 @@
-\subsection{Global parameters}
-\label{parameters:global}
+\subsection{Mesh and geometry parameters}
+\label{parameters:mesh}
+
+\begin{itemize}
+\item {\it Parameter name:} {\tt mesh\_file}
+\phantomsection
+\label{parameters:mesh_file}
+
+\index[prmindex]{mesh\_file}
+\index[prmindexfull]{mesh file}
+
+{\it Default:} Should be provided
+
+{\it Description:} [Standard] 
+
+{\it Possible values:} Any string value 
+
+
+\item {\it Parameter name:} {\tt label\_scaffold}
+\phantomsection
+\label{parameters:label_scaffold}
+
+\index[prmindex]{label\_scaffold}
+\index[prmindexfull]{label scaffold}
+
+{\it Default:} 1
+
+{\it Description:} [Standard] 
+
+{\it Possible values:} Any positive integer value 
+
+
+\item {\it Parameter name:} {\tt label\_medium}
+\phantomsection
+\label{parameters:label_medium}
+
+\index[prmindex]{label\_medium}
+\index[prmindexfull]{label medium}
+
+{\it Default:} 2
+
+{\it Description:} [Standard] 
+
+{\it Possible values:} Any positive integer value 
+
+
+\item {\it Parameter name:} {\tt label\_wall}
+\phantomsection
+\label{parameters:label_wall}
+
+\index[prmindex]{label\_wall}
+\index[prmindexfull]{label wall}
+
+{\it Default:} 3
+
+{\it Description:} [Advanced] 
+
+{\it Possible values:} Any positive integer value 
+
+
+\item {\it Parameter name:} {\tt label\_inlet}
+\phantomsection
+\label{parameters:label_inlet}
+
+\index[prmindex]{label\_inlet}
+\index[prmindexfull]{label inlet}
+
+{\it Default:} 4
+
+{\it Description:} [Advanced] 
+
+{\it Possible values:} Any positive integer value 
+
+
+\item {\it Parameter name:} {\tt label\_outlet}
+\phantomsection
+\label{parameters:label_outlet}
+
+\index[prmindex]{label\_outlet}
+\index[prmindexfull]{label outlet}
+
+{\it Default:} 5
+
+{\it Description:} [Advanced] 
+
+{\it Possible values:} Any positive integer value 
+
+
+\item {\it Parameter name:} {\tt box\_length}
+\phantomsection
+\label{parameters:box_length}
+
+\index[prmindex]{box\_length}
+\index[prmindexfull]{box length}
+
+{\it Default:} 20.0
+
+{\it Description:} [Standard] 
+
+{\it Possible values:} Any positive floating point number 
+
+
+\item {\it Parameter name:} {\tt cube\_size\_x}
+\phantomsection
+\label{parameters:cube_size_x}
+
+\index[prmindex]{cube\_size\_x}
+\index[prmindexfull]{cube size x}
+
+{\it Default:} 13.0
+
+{\it Description:} [Standard] 
+
+{\it Possible values:} Any positive floating point number 
+
+
+\item {\it Parameter name:} {\tt cube\_size\_y}
+\phantomsection
+\label{parameters:cube_size_y}
+
+\index[prmindex]{cube\_size\_y}
+\index[prmindexfull]{cube size y}
+
+{\it Default:} 13.0
+
+{\it Description:} [Standard] 
+
+{\it Possible values:} Any positive floating point number 
+
+
+\item {\it Parameter name:} {\tt cube\_size\_z}
+\phantomsection
+\label{parameters:cube_size_z}
+
+\index[prmindex]{cube\_size\_z}
+\index[prmindexfull]{cube size z}
+
+{\it Default:} 4.0
+
+{\it Description:} [Standard] 
+
+{\it Possible values:} Any positive floating point number 
+
+
+\item {\it Parameter name:} {\tt mesh\_size}
+\phantomsection
+\label{parameters:mesh_size}
+
+\index[prmindex]{mesh\_size}
+\index[prmindexfull]{mesh size}
+
+{\it Default:} 32
+
+{\it Description:} [Standard] 
+
+{\it Possible values:} Any positive integer number 
+
+
+\item {\it Parameter name:} {\tt refine\_initial\_mesh}
+\phantomsection
+\label{parameters:refine_initial_mesh}
+
+\index[prmindex]{refine\_initial\_mesh}
+\index[prmindexfull]{refine initial mesh}
+
+{\it Default:} false (0)
+
+{\it Description:} [Advanced] 
+
+{\it Possible values:} A boolean value (1 or 0)
+
+
+\item {\it Parameter name:} {\tt mshmet\_error}
+\phantomsection
+\label{parameters:mshmet_error}
+
+\index[prmindex]{mshmet\_error}
+\index[prmindexfull]{mshmet error}
+
+{\it Default:} 0.01
+
+{\it Description:} [Advanced] 
+
+{\it Possible values:} Any floating point number
+
+
+\item {\it Parameter name:} {\tt mesh\_size\_min}
+\phantomsection
+\label{parameters:mesh_size_min}
+
+\index[prmindex]{mesh\_size\_min}
+\index[prmindexfull]{mesh size min}
+
+{\it Default:} 0.04
+
+{\it Description:} [Advanced] 
+
+{\it Possible values:} Any floating point number
+
+
+\item {\it Parameter name:} {\tt mesh\_size\_max}
+\phantomsection
+\label{parameters:mesh_size_max}
+
+\index[prmindex]{mesh\_size\_max}
+\index[prmindexfull]{mesh size max}
+
+{\it Default:} 0.8
+
+{\it Description:} [Advanced] 
+
+{\it Possible values:} Any floating point number
+
+\end{itemize}
 
 
 
+\subsection{Materials and boundary conditions parameters}
+\label{parameters:material}
+
+\begin{itemize}
+\item {\it Parameter name:} {\tt material\_density}
+\phantomsection
+\label{parameters:material_density}
+
+\index[prmindex]{material\_density}
+\index[prmindexfull]{material density}
+
+{\it Default:} 1.735e-3
+
+{\it Description:} [Standard] 
+
+{\it Possible values:} Any floating point number
+
+
+\item {\it Parameter name:} {\tt film\_density}
+\phantomsection
+\label{parameters:film_density}
+
+\index[prmindex]{film\_density}
+\index[prmindexfull]{film density}
+
+{\it Default:} 2.3446e-3
+
+{\it Description:} [Standard] 
+
+{\it Possible values:} Any floating point number
+
+
+\item {\it Parameter name:} {\tt material\_satur}
+\phantomsection
+\label{parameters:material_satur}
+
+\index[prmindex]{material\_satur}
+\index[prmindexfull]{material satur}
+
+{\it Default:} 0.134e-3
+
+{\it Description:} [Advanced] 
+
+{\it Possible values:} Any floating point number
+
+
+\item {\it Parameter name:} {\tt material\_eps}
+\phantomsection
+\label{parameters:material_eps}
+
+\index[prmindex]{material\_eps}
+\index[prmindexfull]{material eps}
+
+{\it Default:} 0.55
+
+{\it Description:} [Advanced] 
+
+{\it Possible values:} Any floating point number between 0 and 1
+
+
+\item {\it Parameter name:} {\tt material\_tau}
+\phantomsection
+\label{parameters:material_tau}
+
+\index[prmindex]{material\_tau}
+\index[prmindexfull]{material tau}
+
+{\it Default:} 1.0
+
+{\it Description:} [Advanced] 
+
+{\it Possible values:} Any floating point number
+
+
+\item {\it Parameter name:} {\tt d\_mg}
+\phantomsection
+\label{parameters:d_mg}
+
+\index[prmindex]{d\_mg}
+\index[prmindexfull]{d mg}
+
+{\it Default:} 0.05
+
+{\it Description:} [Standard] 
+
+{\it Possible values:} Any floating point number
+
+
+\item {\it Parameter name:} {\tt d\_cl}
+\phantomsection
+\label{parameters:d_cl}
+
+\index[prmindex]{d\_cl}
+\index[prmindexfull]{d cl}
+
+{\it Default:} 0.05
+
+{\it Description:} [Standard] 
+
+{\it Possible values:} Any floating point number
+
+
+\item {\it Parameter name:} {\tt d\_oh}
+\phantomsection
+\label{parameters:d_oh}
+
+\index[prmindex]{d\_oh}
+\index[prmindexfull]{d oh}
+
+{\it Default:} 25.2
+
+{\it Description:} [Standard] 
+
+{\it Possible values:} Any floating point number
+
+
+\item {\it Parameter name:} {\tt k1}
+\phantomsection
+\label{parameters:k1}
+
+\index[prmindex]{k1}
+\index[prmindexfull]{k1}
+
+{\it Default:} 7.0
+
+{\it Description:} [Standard] 
+
+{\it Possible values:} Any floating point number
+
+
+\item {\it Parameter name:} {\tt k2}
+\phantomsection
+\label{parameters:k2}
+
+\index[prmindex]{k2}
+\index[prmindexfull]{k2}
+
+{\it Default:} 1e15
+
+{\it Description:} [Standard] 
+
+{\it Possible values:} Any floating point number
+
+
+\item {\it Parameter name:} {\tt fluid\_nu}
+\phantomsection
+\label{parameters:fluid_nu}
+
+\index[prmindex]{fluid\_nu}
+\index[prmindexfull]{fluid nu}
+
+{\it Default:} 0.85
+
+{\it Description:} [Advanced] 
+
+{\it Possible values:} Any floating point number
+
+
+\item {\it Parameter name:} {\tt fluid\_in\_x}
+\phantomsection
+\label{parameters:fluid_in_x}
+
+\index[prmindex]{fluid\_in\_x}
+\index[prmindexfull]{fluid in x}
+
+{\it Default:} 0.1
+
+{\it Description:} [Advanced] 
+
+{\it Possible values:} Any floating point number
+
+
+\item {\it Parameter name:} {\tt fluid\_in\_y}
+\phantomsection
+\label{parameters:fluid_in_y}
+
+\index[prmindex]{fluid\_in\_y}
+\index[prmindexfull]{fluid in y}
+
+{\it Default:} 0
+
+{\it Description:} [Advanced] 
+
+{\it Possible values:} Any floating point number
+
+
+\item {\it Parameter name:} {\tt fluid\_in\_z}
+\phantomsection
+\label{parameters:fluid_in_z}
+
+\index[prmindex]{fluid\_in\_z}
+\index[prmindexfull]{fluid in z}
+
+{\it Default:} 0
+
+{\it Description:} [Advanced] 
+
+{\it Possible values:} Any floating point number
+
+
+\item {\it Parameter name:} {\tt initial\_cl}
+\phantomsection
+\label{parameters:initial_cl}
+
+\index[prmindex]{initial\_cl}
+\index[prmindexfull]{initial cl}
+
+{\it Default:} 5.175e-6
+
+{\it Description:} [Standard] 
+
+{\it Possible values:} Any floating point number
+
+
+\item {\it Parameter name:} {\tt initial\_oh}
+\phantomsection
+\label{parameters:initial_oh}
+
+\index[prmindex]{initial\_oh}
+\index[prmindexfull]{initial oh}
+
+{\it Default:} 1e-7
+
+{\it Description:} [Standard] 
+
+{\it Possible values:} Any floating point number
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{itemize}
