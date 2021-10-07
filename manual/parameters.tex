@@ -2,6 +2,20 @@
 \label{parameters:mesh}
 
 \begin{itemize}
+
+\item {\it Parameter name:} {\tt import\_mesh}
+\phantomsection
+\label{parameters:import_mesh}
+
+\index[prmindex]{refine\_initial\_mesh}
+\index[prmindexfull]{Geometry and mesh!import mesh}
+
+{\it Default:} true (1)
+
+{\it Description:} [Standard] Boolean parameter specifying whether an external mesh file is imported or a container box as well as a cubic scaffold would be created on the fly for simulation.
+
+{\it Possible values:} A boolean value (1 or 0)
+
 \item {\it Parameter name:} {\tt mesh\_file}
 \phantomsection
 \label{parameters:mesh_file}
@@ -11,7 +25,7 @@
 
 {\it Default:} Should be provided
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] Path to the input mesh file (in MEDIT {\tt .mesh} format), which can be either absolute or relative. Is relevant only if parameter {\tt import\_mesh} is set to TRUE.
 
 {\it Possible values:} Any string value 
 
@@ -25,7 +39,7 @@
 
 {\it Default:} 1
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] The label of the (volume) region supposed to be scaffold in the input mesh (can be viewed in programs like GMSH before importing into \biodeg{}). 
 
 {\it Possible values:} Any positive integer value 
 
@@ -37,9 +51,9 @@
 \index[prmindex]{label\_medium}
 \index[prmindexfull]{Geometry and mesh!label medium}
 
-{\it Default:} 2
+{\it Default:} 2 
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] The label of the (volume) region supposed to be the medium (electrolyte) in the input mesh.
 
 {\it Possible values:} Any positive integer value 
 
@@ -53,7 +67,7 @@
 
 {\it Default:} 3
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] The label of the surface in the input mesh to be assigned as wall (no slip boundary condition) in the fluid flow simulations.
 
 {\it Possible values:} Any positive integer value 
 
@@ -67,7 +81,7 @@
 
 {\it Default:} 4
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] The label of the surface in the input mesh to be assigned as flow inlet (constant velocity boundary condition) in the fluid flow simulations.
 
 {\it Possible values:} Any positive integer value 
 
@@ -81,7 +95,7 @@
 
 {\it Default:} 5
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] The label of the surface in the input mesh to be assigned as flow outlet (zero pressure boundary condition) in the fluid flow simulations.
 
 {\it Possible values:} Any positive integer value 
 
@@ -95,7 +109,7 @@
 
 {\it Default:} 20.0
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] In case of {\tt import\_mesh} being FALSE, specifies the length of the container box (for the electrolyte) in mm.
 
 {\it Possible values:} Any positive floating point number 
 
@@ -109,7 +123,7 @@
 
 {\it Default:} 13.0
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] In case of {\tt import\_mesh} being FALSE, specifies the length of the scaffold cuboid along the x axis in mm.
 
 {\it Possible values:} Any positive floating point number 
 
@@ -123,7 +137,7 @@
 
 {\it Default:} 13.0
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] In case of {\tt import\_mesh} being FALSE, specifies the length of the scaffold cuboid along the y axis in mm.
 
 {\it Possible values:} Any positive floating point number 
 
@@ -137,7 +151,8 @@
 
 {\it Default:} 4.0
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] In case of {\tt import\_mesh} being FALSE, specifies the length of the scaffold cuboid along the z axis in mm.
+
 
 {\it Possible values:} Any positive floating point number 
 
@@ -151,7 +166,7 @@
 
 {\it Default:} 32
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] Number of elements on each edge of the container box, so a higher number means a finer mesh. The mesh size of the cuboid will be adjusted accordingly or can be adaptively refined by setting parameter {\tt refine\_initial\_mesh} to TRUE.
 
 {\it Possible values:} Any positive integer number 
 
@@ -165,7 +180,7 @@
 
 {\it Default:} false (0)
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] A boolean parameter specifying if the mesh (no matter if imported or generated) should be adaptively refined on the metal-medium interface (corrosion surface). This affects the beginning of the simulation only (on the initial mesh).
 
 {\it Possible values:} A boolean value (1 or 0)
 
@@ -179,7 +194,7 @@
 
 {\it Default:} 0.01
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] Since the open source tool {\tt mshmet} is used for creating a metric for refining the mesh on the level set signed distance function, a tolerance should be specified for it. A lower value results to a finer mesh.
 
 {\it Possible values:} Any floating point number
 
@@ -193,7 +208,7 @@
 
 {\it Default:} 0.04
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] Specifies the smallest element size to be passed to the {\tt tetgen} mesh generator for refining the initial mesh.
 
 {\it Possible values:} Any floating point number
 
@@ -207,7 +222,7 @@
 
 {\it Default:} 0.8
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] Specifies the largest element size to be passed to the {\tt tetgen} mesh generator for refining the initial mesh.
 
 {\it Possible values:} Any floating point number
 
