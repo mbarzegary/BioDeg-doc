@@ -475,7 +475,7 @@
 
 {\it Default:} true (1)
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] Boolean parameter indicating whether the equation for material dissolution and ions release should be solved or not. This equation is the most essential equation and in most use-cases should be solved.
 
 {\it Possible values:} Any boolean value (1 or 0)
 
@@ -489,7 +489,7 @@
 
 {\it Default:} true (1)
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] Boolean parameter indicating whether the equation for the protective film formation should be solved or not.
 
 {\it Possible values:} Any boolean value (1 or 0)
 
@@ -503,7 +503,7 @@
 
 {\it Default:} true (1)
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] Boolean parameter indicating whether the equation for the transport of chloride ions should be solved or not.
 
 {\it Possible values:} Any boolean value (1 or 0)
 
@@ -517,7 +517,7 @@
 
 {\it Default:} true (1)
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] Boolean parameter indicating whether the equation for the transport of hydroxide ions should be solved or not. This equation is essential for calculating the pH changes, if desired.
 
 {\it Possible values:} Any boolean value (1 or 0)
 
@@ -531,7 +531,7 @@
 
 {\it Default:} true (1)
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] Boolean parameter indicating whether the level set surface tracking equation should be solved or not. Surface tracking is essential for computing the mass loss.
 
 {\it Possible values:} Any boolean value (1 or 0)
 
@@ -545,7 +545,7 @@
 
 {\it Default:} false (0)
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] Boolean parameter indicating whether the fluid flow equation should be solved or not.
 
 {\it Possible values:} Any boolean value (1 or 0)
 
@@ -559,7 +559,7 @@
 
 {\it Default:} true (1)
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] Boolean parameter specifying which fluid flow equation to solve: the full transient Navier-Stokes equations or a steady-state Stokes equation. A true value (1) results in \biodeg{} solving the former equation.
 
 {\it Possible values:} Any boolean value (1 or 0)
 
@@ -573,7 +573,7 @@
 
 {\it Default:} true (1)
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] Boolean parameter specifying whether the fluid flow quantities (velocity field components and pressure) should be saved in the output VTK file or not. Requires {\tt write\_vtk} be TRUE.
 
 {\it Possible values:} Any boolean value (1 or 0)
 
@@ -587,7 +587,7 @@
 
 {\it Default:} 10
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] Determines the number of time steps to skip before solving the specified fluid flow equation. For example, if the value is set to 10 (default value), the fluid equation gets solved in time steps 1, 11, 21, \ldots.
 
 {\it Possible values:} Any positive integer number
 
@@ -601,7 +601,7 @@
 
 {\it Default:} 0.025
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] The time step value for the numerical schemes of the simulations.
 
 {\it Possible values:} Any floating point number
 
