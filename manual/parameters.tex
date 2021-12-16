@@ -243,7 +243,7 @@
 
 {\it Default:} 1.735e-3
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] The density of the metallic material. The default value is the density of magnesium.
 
 {\it Possible values:} Any floating point number
 
@@ -257,7 +257,7 @@
 
 {\it Default:} 2.3446e-3
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] The density of the protective film that forms on the corrosion surface. The default value is the density of magnesium hydroxide.
 
 {\it Possible values:} Any floating point number
 
@@ -271,7 +271,7 @@
 
 {\it Default:} 0.134e-3
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] The saturation concentration at which the metallic material (here, the ions) saturates through the medium. The default value is defined for magnesium ions.
 
 {\it Possible values:} Any floating point number
 
@@ -285,7 +285,7 @@
 
 {\it Default:} 0.55
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] The porosity of the formed protective layer in the range [0, 1].
 
 {\it Possible values:} Any floating point number between 0 and 1
 
@@ -299,7 +299,7 @@
 
 {\it Default:} 1.0
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] The tortuosity of the formed protective layer.
 
 {\it Possible values:} Any floating point number
 
@@ -315,7 +315,7 @@
 
 {\it Description:} [Standard] 
 
-{\it Possible values:} Any floating point number
+{\it Possible values:} The diffusion coefficient of the metallic ions transport. This parameter is one of the most effective ones on the rate of degradation.
 
 
 \item {\it Parameter name:} {\tt d\_cl}
@@ -327,7 +327,7 @@
 
 {\it Default:} 0.05
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] The diffusion coefficient of the chloride ions transport
 
 {\it Possible values:} Any floating point number
 
@@ -341,7 +341,7 @@
 
 {\it Default:} 25.2
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] The diffusion coefficient of the hydroxide ions transport
 
 {\it Possible values:} Any floating point number
 
@@ -355,7 +355,7 @@
 
 {\it Default:} 7.0
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] The reaction rate at which the chemical reaction of the protective film formation occurs.
 
 {\it Possible values:} Any floating point number
 
@@ -369,7 +369,7 @@
 
 {\it Default:} 1e15
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] The reaction rate at which the chemical reaction of the protective film dissolution occurs.
 
 {\it Possible values:} Any floating point number
 
@@ -383,7 +383,7 @@
 
 {\it Default:} 0.85
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] The effective viscosity of the fluid used to simulate hydrodynamics condition.
 
 {\it Possible values:} Any floating point number
 
@@ -397,7 +397,7 @@
 
 {\it Default:} 0.1
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] The X component of the fluid velocity defined on inlet (see {\tt label\_inlet}) as the boundary condition for the fluid flow.
 
 {\it Possible values:} Any floating point number
 
@@ -411,7 +411,7 @@
 
 {\it Default:} 0
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] The Y component of the fluid velocity defined on inlet (see {\tt label\_inlet}) as the boundary condition for the fluid flow.
 
 {\it Possible values:} Any floating point number
 
@@ -425,7 +425,7 @@
 
 {\it Default:} 0
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] The Z component of the fluid velocity defined on inlet (see {\tt label\_inlet}) as the boundary condition for the fluid flow.
 
 {\it Possible values:} Any floating point number
 
@@ -439,7 +439,7 @@
 
 {\it Default:} 5.175e-6
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] Initial concentration of chloride ions in the medium.
 
 {\it Possible values:} Any floating point number
 
@@ -453,7 +453,7 @@
 
 {\it Default:} 1e-7
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] Initial concentration of hydroxide ions in the medium, used for computing pH. The default value indicates a pH of 7.
 
 {\it Possible values:} Any floating point number
 
