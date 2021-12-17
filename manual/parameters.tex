@@ -7,7 +7,7 @@
 \phantomsection
 \label{parameters:import_mesh}
 
-\index[prmindex]{refine\_initial\_mesh}
+\index[prmindex]{import\_mesh}
 \index[prmindexfull]{Geometry and mesh!import mesh}
 
 {\it Default:} true (1)
@@ -663,7 +663,7 @@
 
 {\it Default:} "output/result.txt"
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] Path to the text file in which text output, like the mass loss and evolved hydrogen production, are written over time. The path can be relative or absolute.
 
 {\it Possible values:} Any string value referring to a valid path
 
@@ -677,7 +677,7 @@
 
 {\it Default:} true (1)
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] Indicates whether VTK output (in the VTU format) should be written or not. This is required for further post-processing of the results using ParaView.
 
 {\it Possible values:} Any boolean value (1 or 0)
 
@@ -691,7 +691,7 @@
 
 {\it Default:} "output/output"
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] The naming scheme for the VTK output. This is mainly for the PVD file, and the final name of the rest of the files will be determined by the number of employed MPI computing nodes and the time step. The number of VTU files saved per time step equals to the number of employed MPI nodes.
 
 {\it Possible values:} Any string value referring to a valid path
 
@@ -705,7 +705,7 @@
 
 {\it Default:} 0.25
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] The interval of saving results, text and VTK (if selected), to disk. 
 
 {\it Possible values:} Any floating point number
 
@@ -719,7 +719,7 @@
 
 {\it Default:} true (1)
 
-{\it Description:} [Standard] 
+{\it Description:} [Standard] Indicates whether the last state of the system should be saved or not. The last state will be always saved on a global (non-partitioned) mesh, meaning that it will be a single VTU file, in contrast to normal save in which the number of written files equals to the number of computing nodes.
 
 {\it Possible values:} Any boolean value (1 or 0)
 
@@ -733,7 +733,7 @@
 
 {\it Default:} false (0)
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] Indicated whether the side hydrogen evolution results should be computed per unit area of exposed surface.
 
 {\it Possible values:} Any boolean value (1 or 0)
 
@@ -747,7 +747,7 @@
 
 {\it Default:} 1.0
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] In case of symmetrical conditions, this parameter can be used to multiply the obtained quantitative results to have easier comparison with experimental results. A value of 1.0 indicates no multiplication.
 
 {\it Possible values:} Any floating point number
 
@@ -761,7 +761,7 @@
 
 {\it Default:} false (0)
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] Indicates if the degrading material should be exported as a single entity for further analysis like in a structural mechanics simulation. It works based on Mmg level set meshing.
 
 {\it Possible values:} Any boolean value (1 or 0)
 
@@ -775,7 +775,7 @@
 
 {\it Default:} 1.0
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] In case {\tt export\_scaffold} being true, this parameter determines the interval of saving the material mesh to the disk.
 
 {\it Possible values:} Any floating point number
 
@@ -789,7 +789,7 @@
 
 {\it Default:} true (1)
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] In case {\tt export\_scaffold} being true, this parameter indicates whether a volume mesh should be saved as output or not.
 
 {\it Possible values:} Any boolean value (1 or 0)
 
@@ -803,7 +803,7 @@
 
 {\it Default:} true (1)
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] In case {\tt export\_scaffold} being true, this parameter indicates whether a surface mesh should be saved as output or not.
 
 {\it Possible values:} Any boolean value (1 or 0)
 
@@ -817,7 +817,7 @@
 
 {\it Default:} false (0)
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] Determines whether the initial computational mesh should be saved for further debugging or not. Can be used to investigate the mesh refinement if it is asked by setting {\tt refine\_initial\_mesh} to true.
 
 {\it Possible values:} Any boolean value (1 or 0)
 
@@ -831,7 +831,7 @@
 
 {\it Default:} false (0)
 
-{\it Description:} [Advanced] 
+{\it Description:} [Advanced] Determines whether the partitioned computational mesh should be saved for further debugging or not. Can be used to debug and view the output of the mesh partitioning process before going for the actual simulation.
 
 {\it Possible values:} Any boolean value (1 or 0)
 
