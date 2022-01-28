@@ -1,14 +1,14 @@
-%After compiling \biodeg{} as described in Section~\ref{sec:installation}, we have now two executables --- \verb|/build/release/real/dftfe| and \verb|/build/release/complex/dftfe|. The \verb|/build/release/real/dftfe| executable, which uses real data-structures is sufficient for fully non-periodic problems. The executable can also be used for periodic and semi-periodic problems involving a Gamma point calculation. On the other hand the \verb|/build/release/complex/dftfe| executable, which uses complex data-structures is required for periodic and semi-periodic problems with multiple k point sampling for Brillouin zone integration. These executables are to be used as follows-- for a serial run use
-%\begin{verbatim}
-%  ./dftfe parameterFile.prm
-%\end{verbatim}
-%or, for a parallel run use
-%\begin{verbatim}
-%  mpirun -n N ./dftfe parameterFile.prm
-%\end{verbatim}
-%to run with N processors. 
+After installing/compiling \biodeg{} as described in Section~\ref{sec:installation}, we are ready to run it. There are 2 ways to run \biodeg{} simulations: 1) using the UI to configure and execute \biodeg{}, or 2) running \biodeg{} directly from command line and provide simulation parameters via command line arguments. Moreover, in a hybrid approach, the UI can be used to configure and generate the command for method \#2, which can be useful in which you want to configure the simulation only and run it later in another environment like on a super-computer or cluster.
 
-\subsection{Configuring the simulation}
+The UI can be run simply by double clicking on the \verb|BioDeg-UI.exe| in Windows or by executing \verb|./BioDeg-UI| in Linux. For running \biodeg{} directly, one need to execute the following command:
+\begin{verbatim}
+$ mpirun -n N FreeFem++-mpi BioDeg-core/src/main.edp <command line args>
+\end{verbatim}
+in which N defines the number of MPI processes to be used. The full list of command line arguments can be found in Section \hyperref[sec:index]{Index}.
+
+In order to clarify and demonstrate the procedure of performing simulations using \biodeg{}, 2 step-by-step examples are provided in Section~\ref{sec:config}, showing how to configure and run simulations with and without the UI. The mesh files needed to run these examples can be found in the \verb|examples| directory.
+
+\subsection{Configuring the simulation} \label{sec:config}
 
 
 \subsubsection{Example 1}\label{sec:example1}
