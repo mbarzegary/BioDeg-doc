@@ -49,6 +49,48 @@ Running this simulation leads to the results demonstrated in Fig.~\ref{fig:screw
 \end{figure}
 
 
-\subsubsection{Example 2}\label{sec:example2}
+\subsubsection{Example 2 - degradation of a helical shape (Biomech logo)}\label{sec:example2}
 
+In the second example, we want to run a heavier biodegradation simulation (with $\num{1484412}$ elements and a DOF of $\num{254157}$ for each equation), so let's do it by calling \biodeg{} directly on the command line. This approach can be taken on remote clusters and HPC environments to run \biodeg{} on hundreds or thousands of computing nodes. 
 
+The model in this example has a helical shape, which is actually the logo of the lab in which \biodeg{} has been developed. The input mesh file is called \verb|biomech_logo.mesh| and is located in the \verb|demo| directory. Similar to the previous example, we try to use the default value of parameters and only change the crucial ones. You should notice that the default value of parameters might be different between the core \biodeg{} and the UI, so it's always better to define them explicitly in the execution command. The default values of parameters can be checked in Section  \hyperref[sec:index]{Index}.
+
+The main file of the \biodeg{} code is called \verb|main.edp|, and since it's a parallel code, we should run it with the \verb|mpiexec| command. So, calling the code with all the default parameters can be done like this:
+\begin{verbatim}
+$ mpirun -n N FreeFem++-mpi BioDeg-core/src/main.edp -v 0
+\end{verbatim}
+
+The \verb|-v 0| is added to suppress the messages that FreeFEM writes to the terminal, and it's recommended to include it on any call you make to \biodeg{}. Calling \biodeg{} like this does nothing for us, so let's complete the command by adding more configuration to it (remember that boolean values are passed by their integer equivalents, 0 for false and 1 for true):
+
+\begin{itemize}
+\item
+Turn off the fluid flow simulation and ignore the convection effect: \verb|-solve_fluid 0|
+\item
+Indicate that we want to import an external mesh: \verb|-import_mesh 1|
+\item
+Specify the name of the mesh, located in the \verb|demo| directory: \verb|-mesh_file "demo/biomech_logo.mesh"|
+\item 
+Specify the labels of different regions, which are crucial parameters as discussed in previous example (Section~\ref{sec:example1}): \verb|-label_scaffold 3 -label_medium 4|
+\item
+You can lower the degradation rate a little bit if you like. You may run the simulation several times and see the effect of this parameter in action: \verb|-d_mg 0.005|
+\end{itemize}
+
+Adding all the above arguments forms the final execution command to run:
+\begin{verbatim}
+$ mpirun -n N FreeFem++-mpi BioDeg-core/src/main.edp -v 0 -solve_fluid 0 -import_mesh 1 
+-mesh_file "demo/biomech_logo.mesh" -label_scaffold 3 -label_medium 4 -d_mg 0.005
+\end{verbatim}
+
+The above command execute \biodeg{}, which writes its output to the terminal (Fig~\ref{fig:logo_terminal}) and stores the simulation results to the default directory called \verb|output| (make sure it exists before calling \biodeg{}). 
+
+\begin{figure}[h]
+\center \includegraphics[width=10cm]{logo_terminal}
+\caption{Output of \biodeg{} code for the logo example.} \label{fig:logo_terminal}
+\end{figure}
+
+The output of this simulation is shown in Fig~\ref{fig:logo_degradation}, which is postprocessed using the NVIDIA IndeX. Please refer to the postprocessing section to see how to do it.
+
+\begin{figure}[h]
+\center \includegraphics[width=12cm]{logo_degradation}
+\caption{Simulation result of the logo example.} \label{fig:logo_degradation}
+\end{figure}
