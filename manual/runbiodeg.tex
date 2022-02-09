@@ -6,7 +6,7 @@ $ mpirun -n N FreeFem++-mpi BioDeg-core/src/main.edp <command line args>
 \end{verbatim}
 in which N defines the number of MPI processes to be used. The full list of command line arguments can be found in Section \hyperref[sec:index]{Index}.
 
-In order to clarify and demonstrate the procedure of performing simulations using \biodeg{}, 2 step-by-step examples are provided in Section~\ref{sec:config}, showing how to configure and run simulations with and without the UI. The mesh files needed to run these examples can be found in the \verb|demo| directory.
+In order to clarify and demonstrate the procedure of performing simulations using \biodeg{}, 2 step-by-step examples are provided in Section~\ref{sec:config}, showing how to configure and run simulations with and without the UI. Moreover, a third example shows how to combine these approaches and use the UI to generate the execution command. The mesh files needed to run these examples can be found in the \verb|demo| directory.
 
 \subsection{Configuring the simulation} \label{sec:config}
 
@@ -94,3 +94,31 @@ The output of this simulation is shown in Fig~\ref{fig:logo_degradation}, which 
 \center \includegraphics[width=12cm]{logo_degradation}
 \caption{Simulation result of the logo example.} \label{fig:logo_degradation}
 \end{figure}
+
+\subsubsection{Example 3 - biodegradation of a cuboid}\label{sec:example3}
+
+The aim of this example is to show how one can combine the approaches taken in the last two examples and use the UI to generate the execution command so that it can be used to run the model in another environment from command line. The idea is simple: \biodeg{}-UI writes the run command and the output of the core model in the ``Output'' panel, so we can have the execution command if we setup the simulation, run it, stop it immediately, and have a look at the ``Output'' panel.
+
+For demonstrating this, we simulate the degradation of a cuboid inside a cubic container. The mesh file is called \verb|cuboid.mesh|, which has $\num{830808}$ elements. The mesh labels for scaffold and medium are the same as the default values on the \biodeg{}-UI (1 for scaffold and 2 for medium), so we don't need to change them. The setup will be straightforward since we just need to adjust the input and output, but the UI will generate a command with a full list of arguments, making it easy to modify it later if required.
+
+Start the UI,
+make sure \menu[,]{Geometry \& Mesh, Import external mesh} is checked, click the browse button in front of the ``File'' box (\menu[,]{Geometry \& Mesh, Import mesh, File}), navigate to the \verb|demo| directory, and select the \verb|cuboid.mesh| file. Since we don't want to change anything else, go directory to the output settings, mark
+ \menu[,]{Output, Output options, Write VTK output} (since we want to have graphical output for postprocessing), and specify the output directory by clicking on the browse button in front of the ``Output directory'' (\menu[,]{Output, Output options, Output directory}) and select a directory of desire. 
+ 
+As the setup is over, we are ready to run the simulation. Click the \menu[,]{Run simulation} button, wait a moment for the command to appear in the ``Output'' panel (written  like \verb|Executing: <command>|) and then click \menu[,]{Stop simulation}. You can now copy the command from the ``Output'' panel by selecting it, right clicking on it, and choosing \verb|Copy|. For this sample case, the command looks like this:
+
+\begin{verbatim}
+$ mpiexec -n 3 FreeFem++-mpi BioDeg-core/src/main.edp -v 0 -import_mesh 1 
+-mesh_file "/home/mojtaba/BioDeg/demo/cuboid.mesh" -label_scaffold 1 -label_medium 2 
+-refine_initial_mesh 0  -material_density 0.001735 -film_density 0.002344 
+-material_satur 0.000134 -material_eps 0.55 -material_tau 1 -k1 7 -k2 1e+10 -d_mg 0.05 
+-d_cl 0.05 -d_oh 25 -initial_cl 5.17e-06 -initial_oh 1e-07 -solve_mg 1 -solve_film 1 
+-solve_cl 1 -solve_oh 1 -solve_ls 1 -time_step 0.025 -final_time 21 -do_redistance 1  
+-redistance_time 1 -solve_fluid 0 -write_fluid_output 0 -text_output_file 
+"/home/mojtaba/BioDeg/cuboid_output/output.txt" -write_vtk 1 -vtk_output_name 
+"/home/mojtaba/BioDeg/cuboid_output/output" -save_last_state 0 -save_each 0.25 
+-output_per_area 0 -save_multiplier 1 -export_scaffold 0  -save_initial_mesh 0 
+-save_initial_partitioned_mesh 0
+\end{verbatim}
+
+More details of these parameters can be found in Section \hyperref[sec:index]{Index}. You can always omit the parameters with the default value, leading to a command like the one we made in the second example (Section~\ref{sec:example2}).
