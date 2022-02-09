@@ -6,7 +6,7 @@ $ mpirun -n N FreeFem++-mpi BioDeg-core/src/main.edp <command line args>
 \end{verbatim}
 in which N defines the number of MPI processes to be used. The full list of command line arguments can be found in Section \hyperref[sec:index]{Index}.
 
-In order to clarify and demonstrate the procedure of performing simulations using \biodeg{}, 2 step-by-step examples are provided in Section~\ref{sec:config}, showing how to configure and run simulations with and without the UI. Moreover, a third example shows how to combine these approaches and use the UI to generate the execution command. The mesh files needed to run these examples can be found in the \verb|demo| directory.
+In order to clarify and demonstrate the procedure of performing simulations using \biodeg{}, 2 step-by-step examples are provided in Section~\ref{sec:config}, showing how to configure and run simulations with and without the UI. Moreover, a third example shows how to combine these approaches and use the UI to generate the execution command. The mesh files needed to run these examples can be found in the \verb|demo| directory. Additionally, Section~\ref{sec:postprocess} provides some guidelines on the postprocessing of the  \biodeg{} simulation results. 
 
 \subsection{Configuring the simulation} \label{sec:config}
 
@@ -121,4 +121,33 @@ $ mpiexec -n 3 FreeFem++-mpi BioDeg-core/src/main.edp -v 0 -import_mesh 1
 -save_initial_partitioned_mesh 0
 \end{verbatim}
 
-More details of these parameters can be found in Section \hyperref[sec:index]{Index}. You can always omit the parameters with the default value, leading to a command like the one we made in the second example (Section~\ref{sec:example2}).
+More details of these parameters can be found in Section \hyperref[sec:index]{Index}. You can always omit the parameters with the default value, resulting in a command like the one we made in the second example (Section~\ref{sec:example2}).
+
+\subsection{Postprocessing of the results using ParaView} \label{sec:postprocess}
+
+Although the \biodeg{}-UI provides some basic postprocessing features such as the total amount of mass loss (via clicking on \menu[,]{Plot mass loss data} which reads the output text file) and a couple of ParaView templates (via selecting one of the variables on \menu[,]{Graphical output} and clicking \menu[,]{View results}), it can always  be beneficial to visualize the results the way you want. Doing this enables you to reproduce the demonstration you see in Figs.~\ref{fig:screw_degradation} and \ref{fig:logo_degradation} as well as any plot output you want, such as plotting variables over a line.
+
+The details of the postprocessing steps of \biodeg{} results are discussed in the following YouTube videos, describing how to use ParaView to visualize the degrading scaffold beside plotting other output variables such as film formation and pH changes:
+
+\begin{itemize}
+\item 
+\url{https://www.youtube.com/watch?v=yeBPGwP3L80&ab_channel=TuxRiders}
+\item
+\url{https://www.youtube.com/watch?v=Sz-eBML2pxs&ab_channel=TuxRiders}
+\end{itemize}
+
+The following videos gives you an idea on how to plot the values of different variables over a line and how to do some quantitative analysis on the results:
+
+\begin{itemize}
+\item 
+\url{https://www.youtube.com/watch?v=tGi-jk2UE2U&ab_channel=TuxRiders}
+\end{itemize}
+
+For visualizing the fluid flow, more advanced techniques should be used. The following videos demonstrates how to visualize the fluid field around a degrading object simulated by \biodeg{}:
+
+\begin{itemize}
+\item
+\url{https://www.youtube.com/watch?v=CByh84hOslU&ab_channel=TuxRiders}
+\item
+\url{https://www.youtube.com/watch?v=Xzwe94bvGJI&ab_channel=TuxRiders}
+\end{itemize}
