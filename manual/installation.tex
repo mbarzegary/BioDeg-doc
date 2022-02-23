@@ -133,7 +133,7 @@ and add \verb|export PATH=$PATH:/home/<your_profile>/FreeFEM/freefem-install/bin
 
 After doing this, you should be abale to run FreeFEM. Start a new terminal and run \verb|FreeFem++| and \verb|FreeFem++-mpi|. See ing no error in the output means that you have successfully installed it.
 
-\subsubsection{Building and installing \biodeg{}}
+\subsubsection{Building and installing \biodeg{}} \label{sec:build_biodeg}
 
 Since \biodeg{} UI is developed using Qt, compiling the source files is quite straightforward. Upon installing Qt on your machine, clone the \href{https://github.com/mbarzegary/BioDeg-UI}{\biodeg{} UI repository} and follow one of the following scenarios to build it. 
 
@@ -152,6 +152,17 @@ $ cmake ..
 $ make
 \end{verbatim}
 
-In Windows, you may need to call the correct build system installed along with Qt. For example, by assuming that you have installed the MinGW integration for Qt, the \verb|make| command should be written as \verb|mingw32-make|. Moreover, in this case, you need to call CMake with a suitable generator, so the \verb|cmake| command should be replaced by something like \verb|cmake -G "MinGW Makefiles"| (don't forget to insert the double dots).
+In Windows, you may need to call the correct build system installed along with Qt. For example, by assuming that you have installed the MinGW integration for Qt, the \verb|make| command should be written as \verb|mingw32-make|. Moreover, in this case, you need to call CMake with a suitable generator, so the \verb|cmake| command should be replaced by something like \verb|cmake -G "MinGW Makefiles" ..| (don't forget to insert the double dots).
 
-After doing this, you can find the \biodeg{} UI executable in the source directory and run it by executing \verb|./BioDeg| in Linux or \verb|.\BioDeg.exe| in Windows.
+After doing this, you can find the \biodeg{} UI executable in the build (or bin) directory and run it by executing \verb|./BioDeg| in Linux or \verb|.\BioDeg.exe| in Windows.
+
+\subsubsection{Testing \biodeg{}}
+
+The testing module of \biodeg{} is developed using \href{https://github.com/google/googletest}{Google Testing framework}. The tests cover some basic and advanced evaluation of the functionality of FreeFEM installation and \biodeg{}-core, so running them may take several minutes to complete. 
+
+After building \biodeg{} using the process mentioned in Section~\ref{sec:build_biodeg}, you can run the tests simply by executing the following command (in the build directory):
+
+\begin{verbatim}
+$ make test
+\end{verbatim}
+which can be \verb|mingw32-make test| in Windows. You can review the tests results upon completion of all the tests. In a healthy installation of FreeFEM and \biodeg{}, all tests should pass successfully. 
