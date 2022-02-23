@@ -1,6 +1,6 @@
-Installing \biodeg{} is a straightforward procedure. You need to install a couple of prerequisites and download and run \biodeg{}; that's all you need to do. But for advanced users, it might be necessary or more interesting to build everything from scratch to have more control on customizing features and improving performance. As a result, we have provided 2 sets of instructions, one for easy installation using the compiled binaries and one for building things from the source codes. The installation instructions are provided for Linux and Windows operating systems, but the procedure should be very similar for macOS. 
+Installing \biodeg{} is a straightforward procedure. You need to install a couple of prerequisites and download and run \biodeg{}; that's all you need to do. But for advanced users, it might be necessary or more interesting to build everything from scratch to have more control over customizing features and improving performance. As a result, we have provided 2 sets of instructions, one for easy installation using the compiled binaries and one for building things from the source codes. The installation instructions are provided for Linux and Windows operating systems, but the procedure should be very similar for macOS. 
 
-It is possible to use \biodeg{} without the user interface (UI) if this scenario is required by the user (like for running it on a super-computer). The core of \biodeg{} is written in FreeFEM, so in this case, all you need to do is to installing/building FreeFEM and the required libraries, and then, cloning the \href{https://github.com/mbarzegary/BioDeg}{\biodeg{} core repository} and running the code according the provided instruction in the README file of the repository.
+It is possible to use \biodeg{} without the user interface (UI) if this scenario is required by the user (like for running it on a super-computer). The core of \biodeg{} is written in FreeFEM, so in this case, all you need to do is to install/build FreeFEM and the required libraries, and then, clone the \href{https://github.com/mbarzegary/BioDeg}{\biodeg{} core repository} and run the code according to the provided instruction in the README file of the repository.
 
 The \biodeg{} UI contains all the bundles for pre-processing and post-processing simulation input/results. These features are being hosted on their own repositories (), but with obtaining the user interface, you can have them all together. If you choose to use \biodeg{} without the user interface and still want to use the provided script for pre/post-processing, you may need to obtain them separately.
 
@@ -16,7 +16,7 @@ Download FreeFEM installer for the platform you use and install it. You can find
 \item
 Download \biodeg{} tarballs for your preferred platform (Windows or Linux) from the \href{https://github.com/mbarzegary/BioDeg-UI/releases}{Release page of \biodeg{} repository}. This is indeed the \biodeg{} UI bundle that contains the \biodeg{} core, the user interface, the pre-processor, and the post-processor.
 \item
-Extract the downloaded tarball (zip) file and execute \verb|runBioDeg.cmd| in Windows or \verb|runBioDeg.sh| in Linux. By doing this you see \biodeg{} interface showing up on the screen.
+Extract the downloaded tarball (zip) file and execute \verb|runBioDeg.cmd| in Windows or \verb|runBioDeg.sh| in Linux. By doing this, you see the \biodeg{} interface showing up on the screen.
 \end{enumerate}
 
 
@@ -100,7 +100,7 @@ $ cd -
 $ ./reconfigure
 \end{verbatim}
 
-\item Build the source code of FreeFEM using 4 parallel processes (or nay other number you like
+\item Build the source code of FreeFEM using 4 parallel processes (or any other number you like
 \begin{verbatim}
 $ make -j4
 \end{verbatim}
@@ -131,7 +131,7 @@ and add \verb|export PATH=$PATH:/home/<your_profile>/FreeFEM/freefem-install/bin
 
 \end{enumerate}
 
-After doing this, you should be abale to run FreeFEM. Start a new terminal and run \verb|FreeFem++| and \verb|FreeFem++-mpi|. See ing no error in the output means that you have successfully installed it.
+After doing this, you should be able to run FreeFEM. Start a new terminal and run \verb|FreeFem++| and \verb|FreeFem++-mpi|. See ing no error in the output means that you have successfully installed it.
 
 \subsubsection{Building and installing \biodeg{}} \label{sec:build_biodeg}
 
@@ -165,4 +165,4 @@ After building \biodeg{} using the process mentioned in Section~\ref{sec:build_b
 \begin{verbatim}
 $ make test
 \end{verbatim}
-which can be \verb|mingw32-make test| in Windows. You can review the tests results upon completion of all the tests. In a healthy installation of FreeFEM and \biodeg{}, all tests should pass successfully. 
+which can be \verb|mingw32-make test| in Windows. You can review the results upon completion of all the tests. In a healthy installation of FreeFEM and \biodeg{}, all tests should pass successfully. 
